@@ -1,5 +1,17 @@
 const TelegramBot = require('node-telegram-bot-api');
 const cron = require('node-cron');
+const express = require('express');
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+// Servidor web falso para que Render no cierre la aplicación
+app.get('/', (req, res) => {
+    res.send('🤖 ¡El Bot de Finanzas de Humberto está activo y funcionando!');
+});
+
+app.listen(PORT, () => {
+    console.log(`Servidor web corriendo en el puerto ${PORT}`);
+});
 
 // 1. Pega aquí el Token que te dio @BotFather
 const TOKEN = 8825355800:AAHm126NS7s1085i3Bl28T2HOpePG1jnqSw; 
